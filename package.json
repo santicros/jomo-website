@@ -1,0 +1,23 @@
+{
+  "name": "jomo-website",
+  "version": "1.0.0",
+  "author": {
+    "name": "Santi Cros",
+    "email": "scros97@gmail.com",
+    "url": "https://santicros.github.io/"
+  },
+  "description": "",
+  "keywords": [],
+  "license": "ISC",
+  "main": "index.js",
+  "scripts": {
+    "build": "eleventy",
+    "watch": "eleventy --watch",
+    "serve": "eleventy --serve",
+    "start": "eleventy --serve",
+    "debug": "DEBUG=* eleventy"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^0.12.1"
+  }
+}
