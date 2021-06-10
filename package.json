@@ -14,10 +14,12 @@
     "build": "eleventy",
     "watch": "eleventy --watch",
     "serve": "eleventy --serve",
-    "start": "eleventy --serve",
     "debug": "DEBUG=* eleventy"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^0.12.1"
+    "@11ty/eleventy": "^0.12.1",
+    "csso": "^4.2.0",
+    "html-minifier": "^4.0.0",
+    "purgecss": "^4.0.3"
   }
 }

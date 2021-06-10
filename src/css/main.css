@@ -1,0 +1,74 @@
+:root {
+  --primary: #ffffff;
+  --primary-dark: #000000;
+}
+
+::selection {
+  background: rgba(134,139,247,0.6);
+}
+
+@font-face {
+  font-family: "Inter var";
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: normal;
+  font-named-instance: "Regular";
+  src: url("fonts/inter/Inter-roman.var.woff2?v=3.18") format("woff2");
+}
+
+@font-face {
+  font-family: "Monument Extended";
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+  src: url("fonts/monument-extended/monumentextended-bold.woff2")
+    format("woff2");
+}
+
+body {
+  font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.sans-serif {
+  font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+.extended {
+  font-family: "Monument Extended", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue",
+    sans-serif;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  color: var(--primary-dark);
+  background-color: var(--primary);
+}
+
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+a[href] {
+  color: blue;
+}
+a[href]:visited {
+  color: orange;
+}
