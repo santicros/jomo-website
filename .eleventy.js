@@ -14,9 +14,6 @@ module.exports = (eleventyConfig) => {
 
   // Copy
   eleventyConfig.addPassthroughCopy({ 'src/_static/fonts': 'fonts' });
-  if (!isProduction) {
-    eleventyConfig.addPassthroughCopy({ 'src/_static/css': 'css' });
-  }
 
   // Only minify HTML and inline CSS if we are in production.
   //
