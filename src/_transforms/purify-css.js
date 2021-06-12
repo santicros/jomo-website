@@ -39,6 +39,7 @@ const purifyCss = async (content, outputPath) => {
     if (!after.length) {
       throw new Error(`Minified CSS for ${outputPath} has no length.`);
     }
+    // console.log("CSS reduction", before.length - after.length);
     content = content.replace('</head>', `<style>${after}</style></head>`);
     return content;
   }
