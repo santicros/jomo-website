@@ -1,0 +1,17 @@
+---
+layout: layouts/base.njk
+---
+
+<article>
+  <div class="stack flow-space-200">
+    <h1>{{ title }}</h1>
+
+    {% if subhead %}
+    <p>{{ subhead }}</p>
+    {% endif %}
+  </div>
+
+  <div>
+    {{ content | safe }}
+  </div>
+</article>

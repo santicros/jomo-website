@@ -11,15 +11,20 @@
   "license": "ISC",
   "main": "index.js",
   "scripts": {
-    "build": "eleventy",
-    "watch": "eleventy --watch",
-    "serve": "eleventy --serve",
-    "debug": "DEBUG=* eleventy"
+    "dev": "eleventy --serve",
+    "build": "rm -rf dist && NODE_ENV=production eleventy",
+    "debug": "DEBUG=* eleventy",
+    "format": "prettier --write './**/*.{js,css,md,json,html}'",
+    "lint": "eslint --fix ."
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.12.1",
     "csso": "^4.2.0",
+    "eslint": "^7.28.0",
+    "eslint-plugin-import": "^2.23.4",
     "html-minifier": "^4.0.0",
-    "purgecss": "^4.0.3"
+    "prettier": "^2.3.1",
+    "purgecss": "^4.0.3",
+    "rimraf": "^2.7.1"
   }
 }
