@@ -5,56 +5,177 @@ description: JOMO is a free browser extension that makes websites less addictive
 image: https://upload.wikimedia.org/wikipedia/en/a/a9/Example.jpg
 ---
 
-<header class="text-center mt-20">
+<script>
+  function getBrowser() {
+    const userAgent = navigator.userAgent;
+    if ((userAgent.indexOf('Opera') || userAgent.indexOf('OPR')) != -1) {
+      return 'Opera';
+    } else if (userAgent.indexOf('Edg') != -1) {
+      return 'Edge';
+    } else if (userAgent.indexOf('Brave') != -1) {
+      return 'Brave';
+    } else if (userAgent.indexOf('Chrome') != -1) {
+      return 'Chrome';
+    } else if (userAgent.indexOf('Safari') != -1) {
+      return 'Safari';
+    } else if (userAgent.indexOf('Firefox') != -1) {
+      return 'Firefox';
+    } else if (
+      userAgent.indexOf('MSIE') != -1 ||
+      !!document.documentMode == true
+    ) {
+      return 'IE';
+    } else {
+      return 'unknown';
+    }
+  }
+
+  const browserName = getBrowser();
+
+  const unsuportedBrowsers = ['Safari', 'IE', 'unknown'];
+  const urls = {
+    Firefox: 'https://addons.mozilla.org/en-US/firefox/addon/ublock-origin',
+    Chrome:
+      'https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm',
+  };
+
+  window.addEventListener('DOMContentLoaded', (event) => {
+    const linkEls = document.querySelectorAll('.extension-link-browser');
+    if (unsuportedBrowsers.some((unsuportedBrowser) => browserName === unsuportedBrowser)) return;
+    linkEls.forEach((el) => {
+      el.textContent = `Add to ${browserName}`;
+      if (browserName === 'Firefox') {
+        el.href = urls[browserName];
+      }
+    });
+  });
+</script>
+
+<header class="text-center mt-20 px-6">
   <h1 class="font-extended text-4xl sm:text-5xl lg:text-6xl 2xl:text-7xl">
     Limit distractions.<br />Enjoy what matters.
   </h1>
-  <h2 class="mt-10 text-2xl max-w-xl mx-auto">
+  <h2 class="mt-10 text-xl sm:text-2xl max-w-xl mx-auto">
     JOMO is a free & open source browser extension that makes websites less
     addictive.
   </h2>
-  <a href="/" class="mt-10 bg-black transition-opacity hover:opacity-80 inline-block text-white px-8 py-4 rounded-md font-bold text-lg">Add to Firefox</a>
-  <p class="mt-2 text-sm">Also for Chrome and Safari</p>
+  <a
+    href="{{ metadata.extension_url.chrome }}"
+    target="_blank"
+    rel="”noopener"
+    noreferrer”
+    class="
+      extension-link-browser
+      mt-10
+      bg-black
+      transition-opacity
+      hover:opacity-80
+      inline-block
+      text-white
+      px-8
+      py-4
+      rounded-md
+      font-bold
+      text-lg
+    "
+    >Add to Chrome</a
+  >
+  <p class="mt-2 text-sm">Try it on Chrome, Firefox, Edge, Opera or Brave</p>
 </header>
 <main class="mt-10">
-  <section class="text-center max-w-lg mx-auto">
-    <h1 class="font-extended text-2xl sm:text-3xl lg:text-4xl">Choose your digital experience</h1>
-    <p class="text-xl mt-4">
+  <section class="text-center container mx-auto px-6">
+    <h1 class="font-extended text-2xl sm:text-3xl lg:text-4xl">
+      Choose your digital experience
+    </h1>
+    <p class="text-lg sm:text-xl mt-4">
       Social media is designed to be addictive. JOMO lets you remove the
       addictive behaviors you want.
     </p>
   </section>
 
-  <section class="container">
-    <h1>Limit algorithmic recommendations</h1>
-    <p>
-      Recommendation algorithms show you infinite options that you’ll probably
-      like. Put a limit or hide them completly.
-    </p>
-  </section>
-
-  <section class="container text-right">
-    <h1>Hide metrics</h1>
-    <p>
-      Metrics affect how we percieve content online and also put pressure on
-      ourselves when we compare with others. With JOMO now you can hide them.
-    </p>
-  </section>
-
-  <section class="container">
-    <h1>Remove distracting elements</h1>
-    <p>
-      All the elements on a page affect our experience. Now you can remove the
-      distracting ones.
-    </p>
-  </section>
-  <section class="cta">
-    <div class="container">
-      <h1>Start controlling your digital experience</h1>
-      <p>
-        Add the free browser extension and choose the addictive design patterns
-        you want to remove.
+  <section class="flex justify-between container mx-auto px-6">
+    <div class="max-w-xl">
+      <h1 class="font-extended text-2xl sm:text-3xl lg:text-4xl">
+        Limit algorithmic recommendations
+      </h1>
+      <p class="text-lg sm:text-xl mt-4">
+        Recommendation algorithms show you infinite options that you’ll probably
+        like. Put a limit or hide them completly.
       </p>
+    </div>
+    <div>IMG</div>
+  </section>
+
+  <section class="flex justify-between container mx-auto px-6">
+    <div>IMG</div>
+    <div class="max-w-xl text-right">
+      <h1 class="font-extended text-2xl sm:text-3xl lg:text-4xl">
+        Hide metrics
+      </h1>
+      <p class="text-lg sm:text-xl mt-4">
+        Metrics affect how we percieve content online and also put pressure on
+        ourselves when we compare with others. With JOMO now you can hide them.
+      </p>
+    </div>
+  </section>
+
+  <section class="flex justify-between container mx-auto px-6">
+    <div class="max-w-xl">
+      <h1 class="font-extended text-2xl sm:text-3xl lg:text-4xl">
+        Remove distracting elements
+      </h1>
+      <p class="text-lg sm:text-xl mt-4">
+        All the elements on a page affect our experience. Now you can remove the
+        distracting ones.
+      </p>
+    </div>
+    <div>IMG</div>
+  </section>
+  <section class="bg-black text-white py-12 sm:py-16">
+    <div
+      class="
+        container
+        mx-auto
+        flex flex-col
+        lg:flex-row
+        justify-between
+        px-6
+        lg:items-center
+        space-y-8
+        lg:space-y-0
+      "
+    >
+      <div class="max-w-2xl">
+        <h1 class="font-extended text-2xl sm:text-3xl lg:text-4xl">
+          Start controlling your digital experience
+        </h1>
+        <p class="text-lg sm:text-xl mt-4">
+          Add the free browser extension and choose the addictive design
+          patterns you want to remove.
+        </p>
+      </div>
+      <div>
+        <a
+          href="{{ metadata.extension_url.chrome }}"
+          rel="”noopener"
+          noreferrer”
+          target="_blank"
+          class="
+            extension-link-browser
+            bg-white
+            transition-opacity
+            hover:opacity-80
+            inline-block
+            text-black
+            px-8
+            py-4
+            rounded-md
+            font-bold
+            text-lg
+          "
+          >Add to Chrome</a
+        >
+      </div>
     </div>
   </section>
 </main>

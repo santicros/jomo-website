@@ -11,6 +11,7 @@ const minifyHtml = (content, outputPath) => {
         sortAttributes: true,
         html5: true,
         decodeEntities: true,
+        minifyJS: true,
       });
       return content;
     } catch (err) {
