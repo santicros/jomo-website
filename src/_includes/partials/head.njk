@@ -1,59 +1,46 @@
-{%- set pageTitle %}{% if title %}{{ title }} | {% endif %}{{ metadata.siteTitle }}{% endset -%}
+{%- set pageTitle %}
+{% if title %}
+	{{ title }} |
+{% endif %}
+{{ metadata.siteTitle }}{% endset -%}
 {%- set pageDescription %}{{ description or metadata.description }}{% endset -%}
 {%- set pageSocialImg %}{{ image | absolute(metadata.url) }}{% endset -%}
 
-<meta charset="UTF-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
 <title>{{ pageTitle }}</title>
-<meta name="description" content="{{ pageDescription }}" />
-<meta name="theme-color" content="#FFFFFF" />
-<link rel="canonical" href="{{ metadata.url }}{{ canonicalUrl or page.url }}" />
-<link rel="preconnect" href="/" crossorigin />
+<meta name="description" content="{{ pageDescription }}"/>
+<meta name="theme-color" content="#FFFFFF"/>
+<link rel="canonical" href="{{ metadata.url }}{{ canonicalUrl or page.url }}"/>
+<link rel="preconnect" href="/" crossorigin/>
 
-<link
-  rel="preload"
-  href="/fonts/inter/Inter-roman.var.woff2"
-  as="font"
-  type="font/woff2"
-  crossorigin="anonymous"
-/>
-<link
-  rel="preload"
-  href="/fonts/monument-extended/monumentextended-bold.woff2"
-  as="font"
-  type="font/woff2"
-  crossorigin="anonymous"
-/>
+<link rel="preload" href="/fonts/inter/Inter-roman.var.woff2" as="font" type="font/woff2" crossorigin="anonymous"/>
+<link rel="preload" href="/fonts/monument-extended/monumentextended-bold.woff2" as="font" type="font/woff2" crossorigin="anonymous"/>
 
 {% if process.env.NODE_ENV === 'production' %}
-  {# CSS will be injected by purify-css plugin. #}
+	{# CSS will be injected by purify-css plugin. #}
 {% else %}
-  <link rel="stylesheet" href="/style.css" />
+	<link rel="stylesheet" href="/style.css"/>
 {% endif %}
 
 <!-- Google -->
-<meta itemprop="name" content="{{ pageTitle  }}" />
+<meta itemprop="name" content="{{ pageTitle }}"/>
+<meta itemprop="description" content="{{ pageDescription }}"/>
 <meta
-  itemprop="description"
-  content="{{ pageDescription }}"
-/>
-<meta itemprop="image" content="{{ pageSocialImg }}" />
+itemprop="image" content="{{ pageSocialImg }}"/>
 
 <!-- Open Graph / Facebook -->
-<meta property="og:title" content="{{ pageTitle  }}" />
-<meta
-  property="og:description"
-  content="{{ pageDescription }}"
-/>
+<meta property="og:title" content="{{ pageTitle }}"/>
+<meta property="og:description" content="{{ pageDescription }}"/>
 {% if image %}
-<meta property="og:image" content="{{ pageSocialImg }}" />
+	<meta property="og:image" content="{{ pageSocialImg }}"/>
 {% endif %}
 
 <!-- Twitter -->
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="{{ pageTitle  }}" />
-<meta name="twitter:site" content="@{{ metadata.author.twitterHandle }}" />
-<meta name="twitter:creator" content="@{{ metadata.author.twitterHandle }}" />
-<meta name="twitter:image" content="{{ pageSocialImg }}" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="{{ pageTitle }}"/>
+<meta name="twitter:site" content="@{{ metadata.author.twitterHandle }}"/>
+<meta name="twitter:creator" content="@{{ metadata.author.twitterHandle }}"/>
+<meta name="twitter:image" content="{{ pageSocialImg }}"/>

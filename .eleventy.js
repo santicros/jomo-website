@@ -15,6 +15,10 @@ module.exports = (eleventyConfig) => {
   // Copy
   eleventyConfig.addPassthroughCopy({ 'src/_static/fonts': 'fonts' });
 
+  if (!isProduction) {
+    eleventyConfig.addWatchTarget('src/_static/css/tailwind.css');
+  }
+
   // Only minify HTML and inline CSS if we are in production.
   //
   // !!! Important !!!
