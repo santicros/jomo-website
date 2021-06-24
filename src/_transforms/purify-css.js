@@ -1,7 +1,7 @@
 const fs = require('fs');
 const PurgeCSS = require('purgecss').PurgeCSS;
 const csso = require('csso');
-const pathToCss = './.cache/processed.css';
+const pathToCss = './.tmp/processed.css';
 
 /**
  * Inlines all of the page's CSS into the <head>

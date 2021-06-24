@@ -2,32 +2,33 @@
 layout: layouts/base.njk
 ---
 
-<article>
-    <div>
-        <h1 class="text-4xl font-bold">{{ title }}</h1>
-        <div class="flex items-center space-x-4">
+<article class="mt-10">
+    <div class="mx-auto lg:text-lg max-w-prose">
+        
+        <time class="text-sm opacity-60" datetime="{{ date | isoDate }}">{{ date | postDate}}</time>
+        <h1 class="mt-1 text-4xl lg:text-5xl font-bold">{{ title }}</h1>
+        <div class="mt-6 flex items-center space-x-4">
             <img
-src="https://images.unsplash.com/photo-1500048993953-d23a436266cf?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1349&q=80"
-alt="Santi Cros"
-class="w-16 h-16 object-cover rounded-full"
-srcset=""
-/>
+                src="https://images.unsplash.com/photo-1500048993953-d23a436266cf?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1349&q=80"
+                alt="Santi Cros"
+                class="w-16 h-16 object-cover rounded-full"
+                srcset=""/>
             <div>
-                <p>
+                <p class="font-bold">
                     {{ metadata.author.name }}
                 </p>
                 <a
-href="https://twitter.com/{{ metadata.author.twitterHandle }}"
-class="underline"
-target="_blank"
-rel="noopener noreferrer"
->
-@{{ metadata.author.twitterHandle }}
+                    href="https://twitter.com/{{ metadata.author.twitterHandle }}"
+                    class="underline text-sm"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    @{{ metadata.author.twitterHandle }}
                 </a>
             </div>
         </div>
     </div>
-    <div class="prose mx-auto mt-20">
+    <div class="prose lg:prose-lg mx-auto mt-6">
         {{ content | safe }}
     </div>
 </article>

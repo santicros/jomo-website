@@ -3,19 +3,22 @@
 		opacity: 0.5;
 	}
 </style>
-<nav class="flex justify-between px-6 py-4">
-	<span class="font-extended">
-		<a href="/" class="py-2 px-4">JOMO</a>
-	</span>
-	<ul class="flex sm:space-x-6">
-		<li>
-			<a href="/about/" class="py-2 px-4" {% if page.url=="/about/" %} aria-current="page" {% endif %}>About</a>
-		</li>
-		<li>
-			<a href="/faqs/" class="py-2 px-4" {% if page.url=="/faqs/" %} aria-current="page" {% endif %}>FAQs</a>
-		</li>
-		<li>
-			<a href="/blog/" class="py-2 px-4" {% if page.url=="/blog/" %} aria-current="page" {% endif %}>Blog</a>
-		</li>
-	</ul>
-</nav>
+<header>
+	<nav class="flex justify-between px-2 py-3 sm:fixed z-50 sm:top-0 sm:left-0 sm:right-0 sm:bg-white/90 max-w-screen-xl mx-auto">
+		<span class="font-extended font-bold">
+			<a href="/" class="py-3 px-4 inline-block">JOMO</a>
+		</span>
+		<ul class="flex sm:space-x-6">
+			<li>
+				<a href="/about/" class="py-3 px-4 inline-block" {% if page.url=="/about/" %} aria-current="page" {% endif %}>About</a>
+			</li>
+			<li>
+				<a href="/faqs/" class="py-3 px-4 inline-block" {% if page.url=="/faqs/" %} aria-current="page" {% endif %}>FAQs</a>
+			</li>
+			<li>
+				<a href="/blog/" class="py-3 px-4 inline-block" {% if page.url=="/blog/" %} aria-current="page" {% endif %}>Blog</a>
+			</li>
+		</ul>
+	</nav>
+</header>
+<div class="sm:h-20"></div>

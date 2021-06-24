@@ -5,9 +5,9 @@
     { name: 'GitHub', url: 'https://github.com/santicros/jomo-extension', external: true }
 ] %}
 
-<footer class="max-w-screen-lg xl:max-w-screen-xl mx-auto px-6 py-8 sm:py-4 sm:flex sm:flex-row sm:items-center justify-between space-y-2 sm:space-y-0">
-	<p>Created in Barcelona by <a href="https://twitter.com/{{metadata.author.twitterHandle}}" class="underline font-bold" target="_blank" rel="noopener noreferrer">{{metadata.author.name}}</a>.</p>
-	<ul class="sm:flex sm:space-x-4">
+<footer class="max-w-screen-lg xl:max-w-screen-xl mx-auto px-6 py-8 sm:py-4 flex flex-col sm:flex-row sm:items-center justify-between">
+	<p class="order-2 sm:order-1 mt-4 sm:mt-0">Created in Barcelona by <a href="https://twitter.com/{{metadata.author.twitterHandle}}" class="underline font-bold" target="_blank" rel="noopener noreferrer">{{metadata.author.name}}</a>.</p>
+	<ul class="order-1 sm:order-2 sm:flex sm:space-x-4 sm:items-center">
 		{% for website in websites %}
 			<li>
 				<a href="{{ website.url }}" class="-ml-2 sm:ml-0 px-2 py-2 sm:py-4 inline-block" {% if website.external %} target="_blank" rel="noopener noreferrer" {% endif %}>

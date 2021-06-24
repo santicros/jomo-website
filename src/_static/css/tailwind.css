@@ -20,7 +20,11 @@
 @tailwind components;
 
 ::selection {
-  background: rgba(134, 139, 247, 0.6);
+  background: rgba(98,77,255,.1);
+}
+
+img {
+ @apply text-gray-500 flex items-center justify-center;
 }
 
 @tailwind utilities;

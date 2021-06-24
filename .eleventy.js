@@ -8,12 +8,21 @@ const { minifyHtml } = require('./src/_transforms/minify-html');
 // ENV Flag
 const isProduction = process.env.NODE_ENV === 'production';
 
+
+
 module.exports = (eleventyConfig) => {
   // Add filters
   eleventyConfig.addFilter('absolute', absolute);
+  eleventyConfig.addFilter('postDate', (dateObj) => {
+    return new Intl.DateTimeFormat('en-US', { month: 'long', year: 'numeric', day: 'numeric' }).format(dateObj);
+  });
+  eleventyConfig.addFilter('isoDate', (dateObj) => {
+    return dateObj.toISOString().split('T')[0];
+  });
 
   // Copy
   eleventyConfig.addPassthroughCopy({ 'src/_static/fonts': 'fonts' });
+  eleventyConfig.addPassthroughCopy({ 'src/_static/img': 'img' });
 
   if (!isProduction) {
     eleventyConfig.addWatchTarget('src/_static/css/tailwind.css');

@@ -2,8 +2,16 @@
 layout: layouts/base.njk
 ---
 
-<div>
-  <h1>{{ title }}</h1>
-  <a href="/blog/test">First blog test</a>
+<div class="max-w-3xl mx-auto px-4 sm:px-6 xl:max-w-5xl xl:px-0">
+  <h1 class="text-5xl font-bold leading-snug font-extended">{{ title }}</h1>
+  <p>All the latest news.</p>
+
+  <ul class="mt-8">
+    {% for post in collections.blog %}
+      <a href="{{ post.url }}" class="text-2xl font-bold underline">{{post.data.title}}</a>
+      <time datetime="{{ post.date | isoDate }}">{{ post.date | postDate}}</time>
+    {% endfor %}
+  </ul>
+
   {{ content | safe }}
 </div>
