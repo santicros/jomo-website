@@ -56,6 +56,18 @@ image: https://upload.wikimedia.org/wikipedia/en/a/a9/Example.jpg
   });
 </script>
 
+<style>
+.home-image {
+  width: 100%;
+}
+
+@media screen and (min-width: 760px) {
+  .home-image {
+  width: 72vw;
+}
+}
+</style>
+
 <header class="text-center mt-14 px-6">
   <h1
     class="
@@ -82,7 +94,7 @@ image: https://upload.wikimedia.org/wikipedia/en/a/a9/Example.jpg
       mt-10
       bg-black
       transition-opacity
-      hover:opacity-80
+      hover:opacity-90
       inline-block
       text-white
       px-8
@@ -102,7 +114,7 @@ image: https://upload.wikimedia.org/wikipedia/en/a/a9/Example.jpg
       alt="Illustration of JOMO Extension in limited mode on YouTube"
       width="1147"
       height="664"
-      class="mt-10 md:mt-20 mx-auto w-full sm:w-[72vw]"
+      class="home-image mt-10 md:mt-20 mx-auto"
     />
     <div class="absolute -bottom-8 left-0 right-0 z-10">
       <div class="bg-black text-white mx-auto inline-block rounded-xl">
@@ -267,7 +279,7 @@ image: https://upload.wikimedia.org/wikipedia/en/a/a9/Example.jpg
             extension-link-browser
             bg-white
             transition-opacity
-            hover:opacity-80
+            hover:opacity-90
             inline-block
             text-black
             px-8
