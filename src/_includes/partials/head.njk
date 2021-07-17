@@ -1,7 +1,6 @@
 {%- set pageTitle %}{% if title %}{{ title }} | {% endif %}{{ metadata.siteTitle }}{% endset -%}
 {%- set pageDescription %}{{ description or metadata.description }}{% endset -%}
-{%- set pageSocialImg %}{{ metadata.url }}
-{% if image %}{{ image | absolute }}{% else %}{{ metadata.shareImage | absolute }}{% endif %}{% endset -%}
+{%- set pageSocialImg %}{{ metadata.url }}{% if image %}{{ image | absolute }}{% else %}{{ metadata.shareImage | absolute }}{% endif %}{% endset -%}
 {% set currentUrl = metadata.url + page.url %}
 
 {%- set siteTitle = metadata.siteTitle -%}
