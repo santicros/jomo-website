@@ -1,6 +1,7 @@
 {%- set pageTitle %}{% if title %}{{ title }} | {% endif %}{{ metadata.siteTitle }}{% endset -%}
 {%- set pageDescription %}{{ description or metadata.description }}{% endset -%}
-{%- set pageSocialImg %}{{ metadata.url }}{{ image | absolute }}{% endset -%}
+{%- set pageSocialImg %}{{ metadata.url }}
+{% if image %}{{ image | absolute }}{% else %}{{ metadata.shareImage | absolute }}{% endif %}{% endset -%}
 {% set currentUrl = metadata.url + page.url %}
 
 {%- set siteTitle = metadata.siteTitle -%}
@@ -11,7 +12,7 @@
 
 <title>{{ pageTitle }}</title>
 <meta name="description" content="{{ pageDescription }}"/>
-<link rel="canonical" href="{{ currentUrl }}" />
+<link rel="canonical" href="{{ currentUrl }}"/>
 
 <link rel="preconnect" href="/" crossorigin/>
 
@@ -35,11 +36,11 @@
 <meta itemprop="image" content="{{ pageSocialImg }}"/>
 
 <!-- Open Graph / Facebook -->
-<meta property="og:site_name" content="{{ siteTitle }}" />
+<meta property="og:site_name" content="{{ siteTitle }}"/>
 <meta property="og:title" content="{{ pageTitle }}"/>
 <meta property="og:description" content="{{ pageDescription }}"/>
-<meta property="og:type" content="website" />
-<meta property="og:url" content="{{ currentUrl }}" />
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="{{ currentUrl }}"/>
 {% if image %}
 	<meta property="og:image" content="{{ pageSocialImg }}"/>
 	<meta property="og:image:width" content="1200"/>
@@ -49,7 +50,7 @@
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="{{ pageTitle }}"/>
-<meta name="twitter:description" content="{{ pageDescription }}" />
+<meta name="twitter:description" content="{{ pageDescription }}"/>
 <meta name="twitter:site" content="@{{ metadata.author.twitterHandle }}"/>
 <meta name="twitter:creator" content="@{{ metadata.author.twitterHandle }}"/>
 <meta name="twitter:image" content="{{ pageSocialImg }}"/>

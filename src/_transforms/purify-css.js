@@ -3,6 +3,8 @@ const PurgeCSS = require('purgecss').PurgeCSS;
 const csso = require('csso');
 const pathToCss = './.tmp/processed.css';
 
+const { tailwindExtractor } = require('tailwindcss/lib/lib/purgeUnusedStyles');
+
 /**
  * Inlines all of the page's CSS into the <head>
  */
@@ -30,9 +32,7 @@ const purifyCss = async (content, outputPath) => {
         },
       ],
       fontFace: true,
-      defaultExtractor: (content) => {
-        return content.match(/[A-Za-z0-9\\:_-]+/g) || [];
-      },
+      defaultExtractor: (content) => [...tailwindExtractor(content)],
     });
 
     const after = csso.minify(purged[0].css).css;

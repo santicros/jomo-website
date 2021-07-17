@@ -2,7 +2,6 @@
 title: What patterns makes digital designs addictive?
 description: Are there any design patterns that make designs more addictive? What has science studied before?
 date: 2021-06-24
-image: https://upload.wikimedia.org/wikipedia/en/a/a9/Example.jpg
 ---
 
 Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment [link](https://example.com).

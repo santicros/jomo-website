@@ -2,7 +2,6 @@
 title: If websites are addictive, why don’t we limit them?
 description: What things we can do to be less addicted and start choosing our online experience?
 date: 2021-07-02
-image: https://upload.wikimedia.org/wikipedia/en/a/a9/Example.jpg
 ---
 
 Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment [link](https://example.com).
