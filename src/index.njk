@@ -2,7 +2,7 @@
 layout: layouts/home.njk
 title: Limit distractions. Enjoy what matters.
 description: JOMO is a free browser extension that makes websites less addictive and gives you control.
-image: https://upload.wikimedia.org/wikipedia/en/a/a9/Example.jpg
+image: img/social.jpg
 ---
 
 <script>
@@ -20,10 +20,7 @@ image: https://upload.wikimedia.org/wikipedia/en/a/a9/Example.jpg
       return 'Safari';
     } else if (userAgent.indexOf('Firefox') != -1) {
       return 'Firefox';
-    } else if (
-      userAgent.indexOf('MSIE') != -1 ||
-      !!document.documentMode == true
-    ) {
+    } else if (userAgent.indexOf('MSIE') != -1 || !!document.documentMode == true) {
       return 'IE';
     } else {
       return 'unknown';
@@ -35,17 +32,12 @@ image: https://upload.wikimedia.org/wikipedia/en/a/a9/Example.jpg
   const unsuportedBrowsers = ['Safari', 'IE', 'unknown'];
   const urls = {
     Firefox: 'https://addons.mozilla.org/en-US/firefox/addon/ublock-origin',
-    Chrome:
-      'https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm',
+    Chrome: 'https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm'
   };
 
   window.addEventListener('DOMContentLoaded', (event) => {
     const linkEls = document.querySelectorAll('.extension-link-browser');
-    if (
-      unsuportedBrowsers.some(
-        (unsuportedBrowser) => browserName === unsuportedBrowser
-      )
-    )
+    if (unsuportedBrowsers.some((unsuportedBrowser) => browserName === unsuportedBrowser)) 
       return;
     linkEls.forEach((el) => {
       el.textContent = `Add to ${browserName}`;
@@ -57,15 +49,15 @@ image: https://upload.wikimedia.org/wikipedia/en/a/a9/Example.jpg
 </script>
 
 <style>
-.home-image {
-  width: 100%;
-}
-
-@media screen and (min-width: 760px) {
   .home-image {
-  width: 72vw;
-}
-}
+    width: 100%;
+  }
+
+  @media screen and (min-width: 760px) {
+    .home-image {
+      width: 72vw;
+    }
+  }
 </style>
 
 <header class="text-center mt-14 px-6">
@@ -79,7 +71,7 @@ image: https://upload.wikimedia.org/wikipedia/en/a/a9/Example.jpg
     "
     style="line-height: 115%"
   >
-    Limit distractions.<br />Enjoy what matters.
+    Limit distractions.<br/>Enjoy what matters.
   </h1>
   <h2 class="mt-10 text-xl sm:text-2xl max-w-xl mx-auto">
     JOMO is a free & open source browser extension that makes websites less
@@ -115,8 +107,8 @@ image: https://upload.wikimedia.org/wikipedia/en/a/a9/Example.jpg
       width="1147"
       height="664"
       class="home-image mt-10 md:mt-20 mx-auto"
-    />
-    <div class="absolute -bottom-8 left-0 right-0 z-10">
+/>
+    <div class="absolute -bottom-20 sm:-bottom-8 left-0 right-0 z-10">
       <div class="bg-black text-white mx-auto inline-block rounded-xl">
         <h1
           class="
@@ -145,7 +137,7 @@ image: https://upload.wikimedia.org/wikipedia/en/a/a9/Example.jpg
     </div>
   </div>
 </header>
-<main class="mt-12 space-y-16">
+<main class="mt-24 sm:mt-12 space-y-16">
   <section class="text-center max-w-xl mx-auto px-6 w-full">
     <h1 class="font-extended font-bold text-2xl sm:text-3xl lg:text-4xl">
       Choose your digital experience
@@ -174,7 +166,7 @@ image: https://upload.wikimedia.org/wikipedia/en/a/a9/Example.jpg
       </h1>
       <p class="text-lg sm:text-xl mt-4">
         Recommendation algorithms show you infinite options that you’ll probably
-        like. Put a limit or hide them completly.
+        like. Put a limit or hide them completely.
       </p>
     </div>
     <img
@@ -183,7 +175,7 @@ image: https://upload.wikimedia.org/wikipedia/en/a/a9/Example.jpg
       width="1147"
       height="664"
       class="w-full"
-    />
+/>
   </section>
 
   <section
@@ -203,7 +195,7 @@ image: https://upload.wikimedia.org/wikipedia/en/a/a9/Example.jpg
         Hide metrics
       </h1>
       <p class="text-lg sm:text-xl mt-4">
-        Metrics affect how we percieve content online and also put pressure on
+        Metrics affect how we perceive content online and also put pressure on
         ourselves when we compare with others. With JOMO now you can hide them.
       </p>
     </div>
@@ -213,7 +205,7 @@ image: https://upload.wikimedia.org/wikipedia/en/a/a9/Example.jpg
       width="1147"
       height="664"
       class="w-full order-2 md:order-1"
-    />
+/>
   </section>
 
   <section
@@ -243,7 +235,33 @@ image: https://upload.wikimedia.org/wikipedia/en/a/a9/Example.jpg
       width="1147"
       height="664"
       class="w-full"
-    />
+/>
+  </section>
+  <section class="faqs px-6 max-w-2xl mx-auto">
+   <h1 class="font-extended font-bold text-2xl sm:text-3xl lg:text-4xl">
+        Frequently asked questions
+      </h1>
+    <dl class="mt-8 space-y-6 lg:space-y-8">
+      <div class="space-y-1">
+        <dt class="text-xl font-bold">Is the JOMO extension 100% free?</dt>
+        <dd>Yes, JOMO is totally free and Open Source. We believe in a better future where design respects users.</dd>
+      </div>
+
+      <div class="space-y-1">
+        <dt class="text-xl font-bold">What websites does it support?</dt>
+        <dd>As for now it works in YouTube and Twitter. We are working on supporting other social media sites like Facebook, Instagram, Linkedin and also other pages with addictive patterns like Netflix, Amazon and more.</dd>
+      </div>
+
+      <div class="space-y-1">
+        <dt class="text-xl font-bold">Do you share my data?</dt>
+        <dd>JOMO has no ads, no analytics, no trackers, no cookies, and does not send or receive personal informaion of any kind from your device. The code is Open Source so you can check it on <a href="https://github.com/santicros/jomo-extension" target="_blank" rel="noopener noreferrer">GitHub</a>. Your privacy and the security is very important for us.</dd>
+      </div>
+
+      <div class="space-y-1">
+        <dt class="text-xl font-bold">What is the story behind the project?</dt>
+        <dd>JOMO is made by <a href="https://twitter.com/{{metadata.author.twitterHandle}}" target="_blank" rel="noopener noreferrer">Santi Cros</a> and it started as a Final Degree Project. Learn more about the idea, research and development on the <a href="/blog/">blog</a>.</dd>
+      </div>
+    </dl>
   </section>
   <section class="bg-black text-white py-12 sm:py-16">
     <div

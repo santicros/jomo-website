@@ -27,4 +27,8 @@ img {
   @apply text-gray-500 flex items-center justify-center;
 }
 
+.faqs a {
+  @apply underline font-bold
+}
+
 @tailwind utilities;

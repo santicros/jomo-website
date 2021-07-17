@@ -1,6 +1,5 @@
 {% set websites = [
     { name: 'About', url: '/about/' },
-    { name: 'FAQs', url: '/faqs/' },
     { name: 'Blog', url: '/blog/'},
     { name: 'GitHub', url: 'https://github.com/santicros/jomo-extension', external: true }
 ] %}
@@ -10,7 +9,7 @@
 	<ul class="order-1 sm:order-2 sm:flex sm:space-x-4 sm:items-center">
 		{% for website in websites %}
 			<li>
-				<a href="{{ website.url }}" class="-ml-2 sm:ml-0 px-2 py-2 sm:py-4 inline-block" {% if website.external %} target="_blank" rel="noopener noreferrer" {% endif %}>
+				<a href="{{ website.url }}" class="-ml-2 sm:ml-0 px-2 py-2 sm:py-4 inline-block" {% if website.external %} target="_blank" rel="noopener noreferrer" {% endif %} {% if page.url===website.url %} aria-current="page" {% endif %}>
 					{{ website.name }}
 				</a>
 			</li>

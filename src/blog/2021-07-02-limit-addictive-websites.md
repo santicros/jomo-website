@@ -1,7 +1,7 @@
 ---
-title: This is my first post.
-description: This is a post on My Blog about agile frameworks.
-date: 2021-06-19
+title: If websites are addictive, why don’t we limit them?
+description: What things we can do to be less addicted and start choosing our online experience?
+date: 2021-07-02
 image: https://upload.wikimedia.org/wikipedia/en/a/a9/Example.jpg
 ---
 
