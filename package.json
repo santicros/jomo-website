@@ -38,6 +38,7 @@
     "tailwindcss": "^2.2.4"
   },
   "dependencies": {
-    "@tailwindcss/typography": "^0.4.1"
+    "@tailwindcss/typography": "^0.4.1",
+    "eleventy-plugin-svg-contents": "^0.7.0"
   }
 }

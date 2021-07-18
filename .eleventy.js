@@ -5,6 +5,9 @@ const { absolute } = require('./src/_filters/urls');
 const { purifyCss } = require('./src/_transforms/purify-css');
 const { minifyHtml } = require('./src/_transforms/minify-html');
 
+// Plugins
+const svgContents = require("eleventy-plugin-svg-contents");
+
 // ENV Flag
 const isProduction = process.env.NODE_ENV === 'production';
 
@@ -21,6 +24,8 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.addFilter('isoDate', (dateObj) => {
     return dateObj.toISOString().split('T')[0];
   });
+
+  eleventyConfig.addPlugin(svgContents);
 
   // Copy
   eleventyConfig.addPassthroughCopy({ 'src/_static/fonts': 'fonts' });
