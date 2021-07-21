@@ -36,17 +36,17 @@ description: JOMO is a free browser extension that makes websites less addictive
     Chrome: 'https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm'
   };
 
-  window.addEventListener('DOMContentLoaded', (event) => {
+  /*window.addEventListener('DOMContentLoaded', (event) => {
     const linkEls = document.querySelectorAll('.extension-link-browser');
     if (unsuportedBrowsers.some((unsuportedBrowser) => browserName === unsuportedBrowser)) 
       return;
     linkEls.forEach((el) => {
       el.textContent = `Add to ${browserName}`;
       if (browserName === 'Firefox') {
-        el.href = urls[browserName];
+        // el.href = urls[browserName];
       }
     });
-  });
+  });*/
 </script>
 
 <style>
@@ -78,9 +78,13 @@ description: JOMO is a free browser extension that makes websites less addictive
     JOMO is a free & open source browser extension that makes websites less
     addictive.
   </h2>
+  {# 
+  Add to Chrome
+  href="{{ metadata.extension_url.chrome }}""
+  target="_blank"
+   #}
   <a
-    href="{{ metadata.extension_url.chrome }}"
-    target="_blank"
+    href="#"
     rel="noopener noreferrer"
     class="
       extension-link-browser
@@ -96,7 +100,7 @@ description: JOMO is a free browser extension that makes websites less addictive
       font-bold
       text-lg
     "
-    >Add to Chrome</a
+    >Coming soon</a
   >
   <p class="mt-3 text-sm text-black text-opacity-60">
     Try it on Chrome, Firefox, Edge, Opera or Brave
@@ -239,7 +243,7 @@ description: JOMO is a free browser extension that makes websites less addictive
 />
   </section>
   <section class="faqs px-6 max-w-2xl mx-auto">
-   <h1 class="font-extended font-bold text-2xl sm:text-3xl lg:text-4xl">
+    <h1 class="font-extended font-bold text-2xl sm:text-3xl lg:text-4xl">
         Frequently asked questions
       </h1>
     <dl class="mt-8 space-y-6 lg:space-y-8">
@@ -289,11 +293,13 @@ description: JOMO is a free browser extension that makes websites less addictive
         </p>
       </div>
       <div>
+
+      {# {{ metadata.extension_url.chrome }} target="_blank" Add to Chrome #}
         <a
-          href="{{ metadata.extension_url.chrome }}"
+          href="#"
           rel="noopener noreferrer"
           noreferrer”
-          target="_blank"
+          
           class="
             extension-link-browser
             bg-white
@@ -307,7 +313,7 @@ description: JOMO is a free browser extension that makes websites less addictive
             font-bold
             text-lg
           "
-          >Add to Chrome</a
+          >Coming soon</a
         >
       </div>
     </div>
