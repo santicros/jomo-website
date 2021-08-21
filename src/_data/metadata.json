@@ -10,7 +10,7 @@
     "url": "https://santicros.github.io/"
   },
   "extension_url": {
-    "firefox": "https://addons.mozilla.org/en-US/firefox/addon/ublock-origin",
-    "chrome": "https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm"
+    "firefox": "https://addons.mozilla.org/en-US/firefox/addon/jomo/",
+    "chrome": "https://chrome.google.com/webstore/detail/jomo/pcpofdgfgmdohjgmmelbiomccejmkodk"
   }
 }
