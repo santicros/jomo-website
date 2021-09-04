@@ -22,11 +22,7 @@
 <link rel="preload" href="/fonts/inter/Inter-roman.var.woff2" as="font" type="font/woff2" crossorigin="anonymous"/>
 <link rel="preload" href="/fonts/monument-extended/monumentextended-bold.woff2" as="font" type="font/woff2" crossorigin="anonymous"/>
 
-{% if process.env.NODE_ENV === 'production' %}
-	{# CSS will be injected by purify-css plugin. #}
-{% else %}
-	<link rel="stylesheet" href="/style.css"/>
-{% endif %}
+<link rel="stylesheet" href="/style.css"/>
 
 {# JavaScript #}
 <script defer src="/index.js"></script>

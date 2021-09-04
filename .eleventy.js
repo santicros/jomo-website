@@ -41,7 +41,7 @@ module.exports = (eleventyConfig) => {
   // These transforms should _always_ go last because they look at the final
   // HTML for the page and inline CSS / minify.
   if (isProduction) {
-    eleventyConfig.addTransform('purifyCss', purifyCss);
+    // eleventyConfig.addTransform('purifyCss', purifyCss);
     eleventyConfig.addTransform('minifyHtml', minifyHtml);
   }
 

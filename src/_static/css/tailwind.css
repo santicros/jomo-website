@@ -35,7 +35,7 @@ img {
   @apply px-5 sm:px-10 py-3 inline-block rounded-md bg-white bg-opacity-0 hover:bg-opacity-10 transition cursor-pointer;
 }
 
-:checked + .filter-home-illustration { 
+input:checked + .filter-home-illustration { 
   @apply bg-opacity-20 hover:bg-opacity-25;
 }
 
