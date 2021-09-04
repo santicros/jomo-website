@@ -42,17 +42,17 @@ window.addEventListener('DOMContentLoaded', (event) => {
     });
   });
 
-  const linkEls = document.querySelectorAll('.extension-link-browser');
-  if (
-    unsuportedBrowsers.some(
-      (unsuportedBrowser) => browserName === unsuportedBrowser
-    )
-  )
-    return;
-  linkEls.forEach((el) => {
-    el.textContent = `Add to ${browserName}`;
-    if (browserName === 'Firefox') {
-      el.href = urls[browserName];
-    }
-  });
+  // const linkEls = document.querySelectorAll('.extension-link-browser');
+  // if (
+  //   unsuportedBrowsers.some(
+  //     (unsuportedBrowser) => browserName === unsuportedBrowser
+  //   )
+  // )
+  //   return;
+  // linkEls.forEach((el) => {
+  //   el.textContent = `Add to ${browserName}`;
+  //   if (browserName === 'Firefox') {
+  //     el.href = urls[browserName];
+  //   }
+  // });
 });
