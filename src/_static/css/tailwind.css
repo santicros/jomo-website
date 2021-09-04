@@ -28,7 +28,45 @@ img {
 }
 
 .faqs a {
-  @apply underline font-bold
+  @apply underline font-bold;
+}
+
+.filter-home-illustration {
+  @apply px-5 sm:px-10 py-3 inline-block rounded-md bg-white bg-opacity-0 hover:bg-opacity-10 transition cursor-pointer;
+}
+
+:checked + .filter-home-illustration { 
+  @apply bg-opacity-20 hover:bg-opacity-25;
+}
+
+.home-image {
+  width: 100%;
+  transition: opacity 0.9s cubic-bezier(0, 0.55, 0.45, 1);
+}
+
+.home-illustration-visible {
+  opacity: 0;
+}
+[data-home-illustration="visible"] .home-illustration-visible {
+  opacity: 1;
+}
+.home-illustration-limited {
+  opacity: 0;
+}
+[data-home-illustration="limited"] .home-illustration-limited {
+  opacity: 1;
+}
+.home-illustration-hidden {
+  opacity: 0;
+}
+[data-home-illustration="hidden"] .home-illustration-hidden {
+  opacity: 1;
+}
+
+@media screen and (min-width: 760px) {
+  .home-image {
+    width: 72vw;
+  }
 }
 
 @tailwind utilities;

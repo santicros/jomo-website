@@ -6,61 +6,6 @@ description: JOMO is a free browser extension that makes websites less addictive
 
 {# in frontmatter -> image: img/social.jpg #}
 
-<script>
-  function getBrowser() {
-    const userAgent = navigator.userAgent;
-    if ((userAgent.indexOf('Opera') || userAgent.indexOf('OPR')) != -1) {
-      return 'Opera';
-    } else if (userAgent.indexOf('Edg') != -1) {
-      return 'Edge';
-    } else if (userAgent.indexOf('Brave') != -1) {
-      return 'Brave';
-    } else if (userAgent.indexOf('Chrome') != -1) {
-      return 'Chrome';
-    } else if (userAgent.indexOf('Safari') != -1) {
-      return 'Safari';
-    } else if (userAgent.indexOf('Firefox') != -1) {
-      return 'Firefox';
-    } else if (userAgent.indexOf('MSIE') != -1 || !!document.documentMode == true) {
-      return 'IE';
-    } else {
-      return 'unknown';
-    }
-  }
-
-  const browserName = getBrowser();
-
-  const unsuportedBrowsers = ['Safari', 'IE', 'unknown'];
-  const urls = {
-    Firefox: 'https://addons.mozilla.org/en-US/firefox/addon/ublock-origin',
-    Chrome: 'https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm'
-  };
-
-  /*window.addEventListener('DOMContentLoaded', (event) => {
-    const linkEls = document.querySelectorAll('.extension-link-browser');
-    if (unsuportedBrowsers.some((unsuportedBrowser) => browserName === unsuportedBrowser)) 
-      return;
-    linkEls.forEach((el) => {
-      el.textContent = `Add to ${browserName}`;
-      if (browserName === 'Firefox') {
-        // el.href = urls[browserName];
-      }
-    });
-  });*/
-</script>
-
-<style>
-  .home-image {
-    width: 100%;
-  }
-
-  @media screen and (min-width: 760px) {
-    .home-image {
-      width: 72vw;
-    }
-  }
-</style>
-
 <header class="text-center mt-14 px-6">
   <h1
     class="
@@ -78,11 +23,7 @@ description: JOMO is a free browser extension that makes websites less addictive
     JOMO is a free & open source browser extension that makes websites less
     addictive.
   </h2>
-  {# 
-  Add to Chrome
-  href="{{ metadata.extension_url.chrome }}""
-  target="_blank"
-   #}
+  {# {{ metadata.extension_url.chrome }} target="_blank" Add to chrome #}
   <a
     href="#"
     rel="noopener noreferrer"
@@ -105,18 +46,32 @@ description: JOMO is a free browser extension that makes websites less addictive
   <p class="mt-3 text-sm text-black text-opacity-60">
     Try it on Chrome, Firefox, Edge, Opera or Brave
   </p>
-  <div class="relative">
+  <div class="relative mt-10 md:mt-20">
+    <img
+      src="/img/jomo_illustration_youtube_visible.svg"
+      alt="Illustration of JOMO Extension in limited mode on YouTube"
+      width="1147"
+      height="664"
+      class="home-illustration-visible home-image mx-auto"
+/>
     <img
       src="/img/jomo_illustration_youtube_limited.svg"
       alt="Illustration of JOMO Extension in limited mode on YouTube"
       width="1147"
       height="664"
-      class="home-image mt-10 md:mt-20 mx-auto"
+      class="home-illustration-limited absolute top-0 left-0 right-0 home-image mx-auto"
+/>
+    <img
+      src="/img/jomo_illustration_youtube_hidden.svg"
+      alt="Illustration of JOMO Extension in limited mode on YouTube"
+      width="1147"
+      height="664"
+      class="home-illustration-hidden absolute top-0 left-0 right-0 home-image mx-auto"
 />
     <div class="absolute -bottom-20 sm:-bottom-8 left-0 right-0 z-10">
-      <div class="bg-black text-white mx-auto inline-block rounded-xl">
-        <h1
-          class="
+      <fieldset>
+        <div class="bg-black text-white mx-auto inline-block rounded-xl">
+          <legend class="
             p-2
             font-bold
             uppercase
@@ -126,19 +81,24 @@ description: JOMO is a free browser extension that makes websites less addictive
             rounded-t-xl rounded-b-none
             bg-white
             text-black
-          "
-        >
-          Home Recommendations
-        </h1>
-        <div class="p-3 grid grid-cols-3 gap-3 font-bold">
-          <span class="px-10 py-3 inline-block rounded-md bg-white bg-opacity-0 hover:bg-opacity-10 transition cursor-pointer">Show</span>
-          <span
-            class="px-10 py-3 inline-block bg-white bg-opacity-20 hover:bg-opacity-25 rounded-md transition cursor-pointer"
-            >Limit</span
-          >
-          <span class="px-10 py-3 inline-bloc rounded-md bg-white bg-opacity-0 hover:bg-opacity-10 transition cursor-pointer">Hide</span>
+          ">Home Recommendations</legend>
+          <div class="p-3 grid grid-cols-3 gap-3 font-bold">
+            <label>
+              <input type="radio" name="home-illustration" value="visible" class="sr-only">
+              <span class="filter-home-illustration">Show</span>
+            </label>
+            <label>
+              <input type="radio" name="home-illustration" value="limited" checked class="sr-only">
+              <span class="filter-home-illustration">Limit</span>
+            </label>
+            <label>
+              <input type="radio" name="home-illustration" value="hidden" class="sr-only">
+              <span class="filter-home-illustration">Hide</span>
+            </label>
+          </div>
+
         </div>
-      </div>
+      </fieldset>
     </div>
   </div>
 </header>
@@ -293,13 +253,11 @@ description: JOMO is a free browser extension that makes websites less addictive
         </p>
       </div>
       <div>
-
-      {# {{ metadata.extension_url.chrome }} target="_blank" Add to Chrome #}
+        {# {{ metadata.extension_url.chrome }} target="_blank" Add to chrome #}
         <a
           href="#"
           rel="noopener noreferrer"
           noreferrer”
-          
           class="
             extension-link-browser
             bg-white
@@ -313,8 +271,7 @@ description: JOMO is a free browser extension that makes websites less addictive
             font-bold
             text-lg
           "
-          >Coming soon</a
-        >
+          >Coming soon</a>
       </div>
     </div>
   </section>
