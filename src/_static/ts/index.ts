@@ -1,5 +1,5 @@
 import { extension_url } from '../../_data/metadata.json';
-/*
+
 function getBrowser() {
   const userAgent = navigator.userAgent;
   if ((userAgent.indexOf('Opera') || userAgent.indexOf('OPR')) != -1) {
@@ -31,7 +31,6 @@ const urls = {
   Firefox: extension_url.firefox,
   Chrome: extension_url.chrome,
 };
-*/
 
 document.documentElement.dataset.homeIllustration = 'limited';
 
@@ -42,19 +41,18 @@ window.addEventListener('DOMContentLoaded', (event) => {
       document.documentElement.dataset.homeIllustration = `${e.target.value}`;
     });
   });
-  /*
-   const linkEls = document.querySelectorAll('.extension-link-browser');
-   if (
-     unsuportedBrowsers.some(
-       (unsuportedBrowser) => browserName === unsuportedBrowser
-     )
-   )
-     return;
-   linkEls.forEach((el) => {
-     el.textContent = `Add to ${browserName}`;
-     if (browserName === 'Firefox') {
-       el.href = urls[browserName];
-     }
-   });
-   */
+
+  const linkEls = document.querySelectorAll('.extension-link-browser');
+  if (
+    unsuportedBrowsers.some(
+      (unsuportedBrowser) => browserName === unsuportedBrowser
+    )
+  )
+    return;
+  linkEls.forEach((el) => {
+    el.textContent = `Add to ${browserName}`;
+    if (browserName === 'Firefox') {
+      el.href = urls[browserName];
+    }
+  });
 });

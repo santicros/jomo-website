@@ -1,7 +1,6 @@
 ---
 layout: layouts/home.njk
 title: Limit distractions. Enjoy what matters.
-description: JOMO is a free browser extension that makes websites less addictive and gives you control.
 ---
 
 {# in frontmatter -> image: img/social.jpg #}
@@ -17,15 +16,15 @@ description: JOMO is a free browser extension that makes websites less addictive
     "
     style="line-height: 115%"
   >
-    Limit distractions.<br/>Enjoy what matters.
+    Limit distractions.<br />Enjoy what matters.
   </h1>
   <h2 class="mt-10 text-xl sm:text-2xl max-w-xl mx-auto">
     JOMO is a free & open source browser extension that makes websites less
     addictive.
   </h2>
-  {# {{ metadata.extension_url.chrome }} target="_blank" Add to chrome #}
   <a
-    href="#"
+    href="{{ metadata.extension_url.chrome }}"
+    target="_blank"
     rel="noopener noreferrer"
     class="
       extension-link-browser
@@ -41,7 +40,7 @@ description: JOMO is a free browser extension that makes websites less addictive
       font-bold
       text-lg
     "
-    >Coming soon</a
+    >Add to Chrome</a
   >
   <p class="mt-3 text-sm text-black text-opacity-60">
     Try it on Chrome, Firefox, Edge, Opera or Brave
@@ -54,51 +53,86 @@ description: JOMO is a free browser extension that makes websites less addictive
       height="664"
       class="home-illustration-visible home-image mx-auto"
       loading="lazy"
-/>
+    />
     <img
       src="/img/jomo_illustration_youtube_limited.svg"
       alt="Illustration of JOMO Extension in limited mode on YouTube"
       width="1147"
       height="664"
-      class="home-illustration-limited absolute top-0 left-0 right-0 home-image mx-auto"
-/>
+      class="
+        home-illustration-limited
+        absolute
+        top-0
+        left-0
+        right-0
+        home-image
+        mx-auto
+      "
+    />
     <img
       src="/img/jomo_illustration_youtube_hidden.svg"
       alt="Illustration of JOMO Extension in limited mode on YouTube"
       width="1147"
       height="664"
-      class="home-illustration-hidden absolute top-0 left-0 right-0 home-image mx-auto"
+      class="
+        home-illustration-hidden
+        absolute
+        top-0
+        left-0
+        right-0
+        home-image
+        mx-auto
+      "
       loading="lazy"
-/>
+    />
     <div class="absolute -bottom-20 sm:-bottom-8 left-0 right-0 z-10">
       <fieldset>
         <div class="bg-black text-white mx-auto inline-block rounded-xl">
-          <legend class="
-            p-2
-            font-bold
-            uppercase
-            tracking-wide
-            text-sm
-            border-2 border-black
-            rounded-t-xl rounded-b-none
-            bg-white
-            text-black
-          ">Recommendations</legend>
+          <legend
+            class="
+              p-2
+              font-bold
+              uppercase
+              tracking-wide
+              text-sm
+              border-2 border-black
+              rounded-t-xl rounded-b-none
+              bg-white
+              text-black
+            "
+          >
+            Recommendations
+          </legend>
           <div class="p-3 grid grid-cols-3 gap-3 font-bold">
             <label>
-              <input type="radio" name="home-illustration" value="visible" class="sr-only">
+              <input
+                type="radio"
+                name="home-illustration"
+                value="visible"
+                class="sr-only"
+              />
               <span class="filter-home-illustration">Show</span>
             </label>
             <label>
-              <input type="radio" name="home-illustration" value="limited" checked class="sr-only">
+              <input
+                type="radio"
+                name="home-illustration"
+                value="limited"
+                checked
+                class="sr-only"
+              />
               <span class="filter-home-illustration">Limit</span>
             </label>
             <label>
-              <input type="radio" name="home-illustration" value="hidden" class="sr-only">
+              <input
+                type="radio"
+                name="home-illustration"
+                value="hidden"
+                class="sr-only"
+              />
               <span class="filter-home-illustration">Hide</span>
             </label>
           </div>
-
         </div>
       </fieldset>
     </div>
@@ -143,7 +177,7 @@ description: JOMO is a free browser extension that makes websites less addictive
       height="664"
       class="w-full"
       loading="lazy"
-/>
+    />
   </section>
 
   <section
@@ -174,7 +208,7 @@ description: JOMO is a free browser extension that makes websites less addictive
       height="664"
       class="w-full order-2 md:order-1"
       loading="lazy"
-/>
+    />
   </section>
 
   <section
@@ -205,31 +239,59 @@ description: JOMO is a free browser extension that makes websites less addictive
       height="664"
       class="w-full"
       loading="lazy"
-/>
+    />
   </section>
   <section class="faqs px-6 max-w-2xl mx-auto">
     <h1 class="font-extended font-bold text-2xl sm:text-3xl lg:text-4xl">
-        Frequently asked questions
-      </h1>
+      Frequently asked questions
+    </h1>
     <dl class="mt-8 space-y-6 lg:space-y-8">
       <div class="space-y-1">
         <dt class="text-xl font-bold">Is the JOMO extension 100% free?</dt>
-        <dd>Yes, JOMO is totally free and Open Source. We believe in a better future where design respects users.</dd>
+        <dd>
+          Yes, JOMO is totally free and Open Source. We believe in a better
+          future where design respects users.
+        </dd>
       </div>
 
       <div class="space-y-1">
         <dt class="text-xl font-bold">What websites does it support?</dt>
-        <dd>As for now it works in YouTube and Twitter. We are working on supporting other social media sites like Facebook, Instagram, Linkedin and also other pages with addictive patterns like Netflix, Amazon and more.</dd>
+        <dd>
+          As for now it works in YouTube and Twitter. We are working on
+          supporting other social media sites like Facebook, Instagram, Linkedin
+          and also other pages with addictive patterns like Netflix, Amazon and
+          more.
+        </dd>
       </div>
 
       <div class="space-y-1">
         <dt class="text-xl font-bold">Do you share my data?</dt>
-        <dd>JOMO has no ads, no analytics, no trackers, no cookies, and does not send or receive personal informaion of any kind from your device. The code is Open Source so you can check it on <a href="https://github.com/santicros/jomo-extension" target="_blank" rel="noopener noreferrer">GitHub</a>. Your privacy and the security is very important for us.</dd>
+        <dd>
+          JOMO has no ads, no analytics, no trackers, no cookies, and does not
+          send or receive personal informaion of any kind from your device. The
+          code is Open Source so you can check it on
+          <a
+            href="https://github.com/santicros/jomo-extension"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GitHub</a
+          >. Your privacy and the security is very important for us.
+        </dd>
       </div>
 
       <div class="space-y-1">
         <dt class="text-xl font-bold">What is the story behind the project?</dt>
-        <dd>JOMO is made by <a href="https://twitter.com/{{metadata.author.twitterHandle}}" target="_blank" rel="noopener noreferrer">Santi Cros</a> and it started as a Final Degree Project. Learn more about the idea, research and development on the <a href="/blog/">blog</a>.</dd>
+        <dd>
+          JOMO is made by
+          <a
+            href="https://twitter.com/{{ metadata.author.twitterHandle }}"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Santi Cros</a
+          >
+          and it started as a Final Degree Project. Learn more about the idea,
+          research and development on the <a href="/blog/">blog</a>.
+        </dd>
       </div>
     </dl>
   </section>
@@ -258,9 +320,9 @@ description: JOMO is a free browser extension that makes websites less addictive
         </p>
       </div>
       <div>
-        {# {{ metadata.extension_url.chrome }} target="_blank" Add to chrome #}
         <a
-          href="#"
+          href="{{ metadata.extension_url.chrome }}"
+          target="_blank"
           rel="noopener noreferrer"
           noreferrer”
           class="
@@ -276,7 +338,8 @@ description: JOMO is a free browser extension that makes websites less addictive
             font-bold
             text-lg
           "
-          >Coming soon</a>
+          >Add to Chrome</a
+        >
       </div>
     </div>
   </section>
